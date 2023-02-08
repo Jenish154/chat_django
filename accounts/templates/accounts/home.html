@@ -1,0 +1,11 @@
+{% extends 'accounts/layout.html' %}
+{% block title %}Home Page{% endblock title %}
+{% block body %}
+    <div class="container">
+        <h1>This is my homepage</h1>
+        <span><a href="{% url 'login' %}">Login</a> to start chatting with your friends</span><br>
+        <span><a href="{% url 'register' %}">Register</a> to continue</span><br>
+        <span><a href="{% url 'logout' %}">Logout</a></span>
+    </div>
+    
+{% endblock body %}

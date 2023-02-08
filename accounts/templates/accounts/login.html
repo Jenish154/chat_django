@@ -1,0 +1,23 @@
+{% extends 'accounts/layout.html' %}
+{% block title %}Login{% endblock title %}
+{% block body %}
+    <div>
+        <h4 class="head-tag">Login to continue</h4>
+    </div>
+    <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-component">
+                    {{ field.errors }}
+                    {{ field.label_tag }}
+                    {{ field }}
+                </div>
+            {% endfor %}
+            <input type="submit" class="submit-button">
+        </form>
+        <div>
+            <small class="small-text">Don't have an account yet? <a href="{% url 'register' %}">Sign Up</a></small>
+        </div>
+    </div>
+{% endblock body %}
